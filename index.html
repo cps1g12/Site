@@ -43,11 +43,13 @@
 <script src="tweets_list.js" type="text/javascript"></script> 
 <script type="text/javascript">
 
+var suffix = ['d','m','h'];
 	
 var hours = Math.round(Math.random()*12); 
+var chosen_suffix = suffix[Math.floor(Math.random() * 3)];
 	
-document.getElementsByClassName('TweetAuthor-screenName')[0].innerHTML = "@realDonaldTrump - " + hours +"h";
-document.getElementsByClassName('timeline-Tweet-timestamp')[0].innerHTML = hours +"h";
+document.getElementsByClassName('TweetAuthor-screenName')[0].innerHTML = "@realDonaldTrump - " + hours +chosen_suffix;
+document.getElementsByClassName('timeline-Tweet-timestamp')[0].innerHTML = hours +chosen_suffix;
 	
 document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = tweets[Math.floor(Math.random()*tweets.length)];
 	
