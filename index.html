@@ -41,15 +41,15 @@
 
 	
 var num = Math.random(); 
-document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = "Hi";
+document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = num;
 function go(x){
   if (x == 0 && num<=0.5)
-    document.getElementById('timeline-Tweet-text').innerHTML = "Correct";
+    document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = "Correct";
   else
   if (x==1 && num>0.5)
-    document.getElementById('timeline-Tweet-text').innerHTML = "Correct";
+    document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = "Correct";
   else
-    document.getElementById('timeline-Tweet-text').innerHTML = "Not Correct";
+    document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = "Not Correct";
 }
 
 </script>
