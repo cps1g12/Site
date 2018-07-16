@@ -43,9 +43,11 @@
 	
 <script type="text/javascript">
 
+var hours = round(Math.random()*12); 
+document.getElementsByClassName('TweetAuthor-screenName')[0].innerHTML = "@realDonaldTrump - " + hours +"h";
 	
-var num = Math.random(); 
 document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = num;
+	
 function go(x){
   if (x == 0 && num<=0.5)
     document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = "Correct";
