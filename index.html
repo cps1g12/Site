@@ -38,17 +38,19 @@
 	
 	
 <script type="text/javascript">
+window.onload = function name(){ 
 var num = Math.random(); 
-document.getElementById("timeline-Tweet-text").innerHTML = num;
+document.getElementById('timeline-Tweet-text').innerHTML = num;
   
 function go(x){
   if (x == 0 && num<=0.5)
-    document.getElementById("timeline-Tweet-text").innerHTML = "Correct";
+    document.getElementById('timeline-Tweet-text').innerHTML = "Correct";
   else
   if (x==1 && num>0.5)
-    document.getElementById("timeline-Tweet-text").innerHTML = "Correct";
+    document.getElementById('timeline-Tweet-text').innerHTML = "Correct";
   else
-    document.getElementById("timeline-Tweet-text").innerHTML = "Not Correct";
+    document.getElementById('timeline-Tweet-text').innerHTML = "Not Correct";
+}
 }
 </script>
 	
