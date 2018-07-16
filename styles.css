@@ -18,6 +18,12 @@ header {
 text-align: center;
 }
 
+.counter-block{
+  width: 500px;
+  padding:10px;
+  text-align: center
+}
+
 .button-block{
   width: 500px;
   padding:10px;
