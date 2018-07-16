@@ -10,24 +10,7 @@
 <h1>Trump or no</h1>
   
 <div class="tw-block-parent">
-  <div class="timeline-TweetList-tweet">
-    <div class="timeline-Tweet">
-      <div class="timeline-Tweet-brand">
-        <div class="Icon Icon--twitter"></div>
-      </div>
-      <div class="timeline-Tweet-author">
-        <div class="TweetAuthor"><a class="TweetAuthor-link" href="#channel"> </a><span class="TweetAuthor-avatar"> 
-            <div class="Avatar"> </div></span><span class="TweetAuthor-name">Donald J. Trump </span><span class="Icon Icon--verified"> </span><span class="TweetAuthor-screenName">@realDonaldTrump </span></div>
-      </div>
-      <div id="timeline-Tweet-text">We're excited for the inaugural Twitter Community Meetup<a href="#">@TwitterSeattle </a><span>tomorrow! </span><a href="#">#TapIntoTwitter </a><a href="#">meetup.com/Seattle-Twitte… </a></div>
-      
-	<div class="timeline-Tweet-metadata"><span class="timeline-Tweet-timestamp">9h</span></div>
-      <ul class="timeline-Tweet-actions">
-        <li class="timeline-Tweet-action"><a class="Icon Icon--heart" href="#"></a></li>
-        <li class="timeline-Tweet-action"><a class="Icon Icon--share" href="#"></a></li>
-      </ul>
-    </div>
-  </div>
+
 </div>
 	  
 <button type="button" onclick="go(0)">Smaller</button>
@@ -38,10 +21,28 @@
 	
 	
 <script type="text/javascript">
-
+var tweet = "  <div class="timeline-TweetList-tweet">
+    <div class="timeline-Tweet">
+      <div class="timeline-Tweet-brand">
+        <div class="Icon Icon--twitter"></div>
+      </div>
+      <div class="timeline-Tweet-author">
+        <div class="TweetAuthor"><a class="TweetAuthor-link" href="#channel"> </a><span class="TweetAuthor-avatar"> 
+            <div class="Avatar"> </div></span><span class="TweetAuthor-name">Donald J. Trump </span><span class="Icon Icon--verified"> </span><span class="TweetAuthor-screenName">@realDonaldTrump </span></div>
+      </div>
+      <div id="timeline-Tweet-text">[]</div>
+      
+	<div class="timeline-Tweet-metadata"><span class="timeline-Tweet-timestamp">9h</span></div>
+      <ul class="timeline-Tweet-actions">
+        <li class="timeline-Tweet-action"><a class="Icon Icon--heart" href="#"></a></li>
+        <li class="timeline-Tweet-action"><a class="Icon Icon--share" href="#"></a></li>
+      </ul>
+    </div>
+  </div>";
+	
+	
 var num = Math.random(); 
-document.getElementById('timeline-Tweet-text').innerHTML = "We're excited for the inaugural Twitter Community Meetup<a href="#">@TwitterSeattle </a><span>tomorrow! </span><a href="#">#TapIntoTwitter </a><a href="#">meetup.com/Seattle-Twitte… </a>";
-  
+document.getElementById('tw-block-parent').innerHTML = tweet.replace("[]","Hi");
 function go(x){
   if (x == 0 && num<=0.5)
     document.getElementById('timeline-Tweet-text').innerHTML = "Correct";
