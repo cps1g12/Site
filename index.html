@@ -2,23 +2,7 @@
 <html>
   
 <head>
-	
 <link rel="stylesheet" type="text/css" href="styles.css">
-  
-<script type="text/javascript">
-var num = Math.random(); 
-document.getElementById("timeline-Tweet-text").innerHTML = num;
-  
-function go(x){
-  if (x == 0 && num<=0.5)
-    document.getElementById("timeline-Tweet-text").innerHTML = "Correct";
-  else
-  if (x==1 && num>0.5)
-    document.getElementById("timeline-Tweet-text").innerHTML = "Correct";
-  else
-    document.getElementById("timeline-Tweet-text").innerHTML = "Not Correct";
-}
-</script>
 </head>
   
 <body>
@@ -49,5 +33,20 @@ function go(x){
 <button type="button" onclick="go(0)">Smaller</button>
 <button type="button" onclick="go(1)">Larger</button>
 
+	
+<script type="text/javascript">
+var num = Math.random(); 
+document.getElementById("timeline-Tweet-text").innerHTML = num;
+  
+function go(x){
+  if (x == 0 && num<=0.5)
+    document.getElementById("timeline-Tweet-text").innerHTML = "Correct";
+  else
+  if (x==1 && num>0.5)
+    document.getElementById("timeline-Tweet-text").innerHTML = "Correct";
+  else
+    document.getElementById("timeline-Tweet-text").innerHTML = "Not Correct";
+}
+</script>
 </body>
 </html>
