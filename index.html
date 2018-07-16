@@ -7,16 +7,16 @@
   
 <script type="text/javascript">
 var num = Math.random(); 
-document.write(num);
+timeline-Tweet-text.textContent = num;
   
 function go(x){
   if (x == 0 && num<=0.5)
-    document.write('Correct');
+    timeline-Tweet-text.textContent = "Correct";
   else
   if (x==1 && num>0.5)
-    document.write('Correct');
+    timeline-Tweet-text.textContent = "Correct";
   else
-    document.write('Not correct');
+    timeline-Tweet-text.textContent = "Not Correct";
 }
 </script>
 </head>
@@ -33,10 +33,11 @@ function go(x){
       </div>
       <div class="timeline-Tweet-author">
         <div class="TweetAuthor"><a class="TweetAuthor-link" href="#channel"> </a><span class="TweetAuthor-avatar"> 
-            <div class="Avatar"> </div></span><span class="TweetAuthor-name">realDonaldTrump </span><span class="Icon Icon--verified"> </span><span class="TweetAuthor-screenName">@TwitterDev </span></div>
+            <div class="Avatar"> </div></span><span class="TweetAuthor-name">Donald J. Trump </span><span class="Icon Icon--verified"> </span><span class="TweetAuthor-screenName">@realDonaldTrump </span></div>
       </div>
       <div class="timeline-Tweet-text">We're excited for the inaugural Twitter Community Meetup<a href="#">@TwitterSeattle </a><span>tomorrow! </span><a href="#">#TapIntoTwitter </a><a href="#">meetup.com/Seattle-Twitte… </a></div>
-      <div class="timeline-Tweet-metadata"><span class="timeline-Tweet-timestamp">9h</span></div>
+      
+	<div class="timeline-Tweet-metadata"><span class="timeline-Tweet-timestamp">9h</span></div>
       <ul class="timeline-Tweet-actions">
         <li class="timeline-Tweet-action"><a class="Icon Icon--heart" href="#"></a></li>
         <li class="timeline-Tweet-action"><a class="Icon Icon--share" href="#"></a></li>
