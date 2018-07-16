@@ -1,9 +1,13 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic';
 
 .centering{
-  position: absolute;
-  top: 50%;
-  left: 50%;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
 }
 
 .tw-block-parent {
