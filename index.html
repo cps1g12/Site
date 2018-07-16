@@ -43,6 +43,23 @@
 	
 <script type="text/javascript">
 
+var fs = require('fs');
+var readline = require('readline');
+var stream = require('stream');
+
+var instream = fs.createReadStream('tweets.csv');
+var outstream = new stream;
+var rl = readline.createInterface(instream, outstream);
+
+rl.on('line', function(line) {
+  // process line here
+});
+
+rl.on('close', function() {
+  // do something on finish here
+});
+	
+	
 var hours = round(Math.random()*12); 
 document.getElementsByClassName('TweetAuthor-screenName')[0].innerHTML = "@realDonaldTrump - " + hours +"h";
 document.getElementsByClassName('timeline-Tweet-timestamp')[0].innerHTML = hours +"h";
