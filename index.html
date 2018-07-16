@@ -10,18 +10,7 @@
 <h1>Trump or no</h1>
   
 <div id="tw-block-parent">
-
-</div>
-	  
-<button type="button" onclick="go(0)">Smaller</button>
-<button type="button" onclick="go(1)">Larger</button>
-
-</body>
-	
-	
-	
-<script type="text/javascript">
-var tweet = '<div class="timeline-TweetList-tweet">
+<div class="timeline-TweetList-tweet">
     <div class="timeline-Tweet">
       <div class="timeline-Tweet-brand">
         <div class="Icon Icon--twitter"></div>
@@ -38,11 +27,21 @@ var tweet = '<div class="timeline-TweetList-tweet">
         <li class="timeline-Tweet-action"><a class="Icon Icon--share" href="#"></a></li>
       </ul>
     </div>
-  </div>';
+  </div>
+</div>
+	  
+<button type="button" onclick="go(0)">Smaller</button>
+<button type="button" onclick="go(1)">Larger</button>
+
+</body>
 	
+	
+	
+<script type="text/javascript">
+
 	
 var num = Math.random(); 
-document.getElementById('tw-block-parent').innerHTML = tweet.replace("[]","Hi");
+document.getElementById('timeline-Tweet-text').innerHTML = "Hi";
 function go(x){
   if (x == 0 && num<=0.5)
     document.getElementById('timeline-Tweet-text').innerHTML = "Correct";
