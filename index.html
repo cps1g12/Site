@@ -7,16 +7,16 @@
   
 <script type="text/javascript">
 var num = Math.random(); 
-timeline-Tweet-text.textContent = num;
+document.getElementById('timeline-Tweet-text').innerHTML = num;
   
 function go(x){
   if (x == 0 && num<=0.5)
-    timeline-Tweet-text.textContent = "Correct";
+    document.getElementById('timeline-Tweet-text').innerHTML = "Correct";
   else
   if (x==1 && num>0.5)
-    timeline-Tweet-text.textContent = "Correct";
+    document.getElementById('timeline-Tweet-text').innerHTML = "Correct";
   else
-    timeline-Tweet-text.textContent = "Not Correct";
+    document.getElementById('timeline-Tweet-text').innerHTML = "Not Correct";
 }
 </script>
 </head>
