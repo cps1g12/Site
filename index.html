@@ -41,7 +41,7 @@
 
 	
 var num = Math.random(); 
-document.getElementById('timeline-Tweet-text').innerHTML = "Hi";
+document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = "Hi";
 function go(x){
   if (x == 0 && num<=0.5)
     document.getElementById('timeline-Tweet-text').innerHTML = "Correct";
