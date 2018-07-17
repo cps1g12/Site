@@ -75,7 +75,10 @@
       function createTokensNew() {
         var terms = trump_speeches.split(" ");
         for (var i = 0; i < terms.length-1; i++) {
-          tokens_new[terms[i]].push(terms[i+1]);
+	  if (tokens_new[terms[i]]!= undefined)
+          	tokens_new[terms[i]].push(terms[i+1]);
+	  else
+		tokens_new[terms[i]] = terms[i+1]; 
         }
       }
       
