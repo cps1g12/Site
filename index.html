@@ -105,6 +105,8 @@
 			if (sentence.slice(-1) == "." || sentence.slice(-1) == "!" || currentWord.charAt(0) == "#")
 				break;
 		}
+		
+		if (Math.random() > 0.9) break;
         }
 	      
 	if (sentence.split('"').length-1 % 2 != 0)
