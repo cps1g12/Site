@@ -99,6 +99,11 @@
 			sentence += currentWord + " ";
 		else
 		    break;
+		
+		if (sentence.length>50+Math.floor(Math.random()*40)){
+			if (sentence.slice(-1) == "." || sentence.slice(-1) == "!" || currentWord.charAt(0) == "#")
+				break;
+		}
         }
         document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = sentence;
       }
