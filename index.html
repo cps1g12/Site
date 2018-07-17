@@ -164,7 +164,7 @@
 		sentence = sentence.substring(0, sentence.length - 1);
 	    
 	var words = sentence.split(" ");
-	if (wrong_ending.indexOf(words[words.length-1].toLowerCase() !=-1) || wrong_ending.indexOf(words[words.length-1].substring(0, words.length - 1).toLowerCase())!=-1){
+	if (wrong_ending.indexOf(words[words.length-1].toLowerCase()) !=-1 || wrong_ending.indexOf(words[words.length-1].substring(0, words.length - 1).toLowerCase())!=-1){
 		sentence = words[0];
 		for (var i =1; i<words.length-1; i++)
 			sentence += " "+ words[i];
