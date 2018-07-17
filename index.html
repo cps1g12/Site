@@ -56,7 +56,6 @@
       for (i = 0; i < tweets.length; i++) { 
 	  trump_speeches = trump_speeches + ' ' + tweets[i].text;
 	}
-	debugging;
 		
       var tokens = [];
       
@@ -90,7 +89,7 @@
         createTokens();
         var currentWord = chooseStartingToken();
         var sentence = currentWord + " ";
-        while (currentWord.indexOf(".") < 0) { // while we haven't found a period
+        while (sentence.length< 140) { 
 			currentWord = findNextWord(currentWord);
 			sentence += currentWord + " ";
         }
