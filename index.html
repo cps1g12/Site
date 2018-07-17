@@ -58,7 +58,7 @@
       var trump_speeches = '';
       var i;
       for (i = 0; i < tweets.length; i++) { 
-	  trump_speeches +=' ' + tweets[i].text;
+	  trump_speeches += ' ' + tweets[i].text;
 	}
 	trump_speeches += extra_text;
 		
@@ -115,7 +115,7 @@
 		sentence += ".";
 	      
 	if (sentence.split('"').length-1 % 2 != 0)
-		sentence = sentence.replace('"', '');
+		sentence = sentence.replace(/['"]+/g, '');
 	      
 	if (sentence.charAt(0).match(/[a-z]/i))
 		sentence = sentence.charAt(0).toUpperCase() + sentence.slice(1);
