@@ -71,6 +71,12 @@
         }
       }
       
+      function createTokensNew() {
+        var terms = trump_speeches.split(" ");
+        for (var i = 0; i < terms.length-1; i++) {
+          tokens[terms[i]].push(terms[i+1]);
+        }
+      }
       
       function chooseStartingToken() {
         var index = Math.floor(Math.random() * tokens.length);
@@ -91,6 +97,7 @@
       
       
       function start() {
+	createTokensNew()
         createTokens();
         var currentWord = chooseStartingToken();
         var sentence = currentWord + " ";
