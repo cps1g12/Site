@@ -168,8 +168,11 @@
 	}
 		
 	      
-	if (!(sentence.slice(-1) == "." || sentence.slice(-1) == "!" || sentence.slice(-1) == "?"))
+	if (!(sentence.slice(-1) == "." || sentence.slice(-1) == "!" || sentence.slice(-1) == "?")){
+		if (sentence.slice(-1) == ',')
+			sentence = sentence.substring(0, sentence.length - 1);
 		sentence += ".";
+	}
 	      
 	if (sentence.split('"').length-1 % 2 != 0)
 		sentence = sentence.replace(/['"]+/g, '');
