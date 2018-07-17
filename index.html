@@ -95,7 +95,7 @@
         var sentence = currentWord + " ";
         while (sentence.length< 140) { 
 		currentWord = findNextWord(currentWord);
-		if ((sentence.length + currentWord.length<140)
+		if ((sentence.length + currentWord.length)<140)
 			sentence += currentWord + " ";
 		else
 		    break;
