@@ -58,13 +58,10 @@
 	}
 	debugging;
 		
-      var nlp = window.nlp_compromise;
       var tokens = [];
       
-      
       function createTokens() {
-        var nlp_text = nlp.text(trump_speeches);
-        var terms = nlp_text.terms();
+        var terms = trump_speeches.split(" ");
         for (var i = 0; i < terms.length; i++) {
           tokens.push(terms[i].text);
         }
@@ -97,7 +94,7 @@
 			currentWord = findNextWord(currentWord);
 			sentence += currentWord + " ";
         }
-        document.write(sentence);
+        document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = sentence;
       }
       
       start();
