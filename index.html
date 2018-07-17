@@ -96,7 +96,7 @@
         document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = sentence;
       }
       
-      start();
+     
 </script>
 	
 <script type="text/javascript">
@@ -109,22 +109,30 @@ var chosen_suffix = suffix[Math.floor(Math.random() * 3)];
 var count = 0;
 var correct = 0;
 
+var real = false;
 	
 document.getElementsByClassName('TweetAuthor-screenName')[0].innerHTML = "@realDonaldTrump - " + hours +chosen_suffix;
 document.getElementsByClassName('timeline-Tweet-timestamp')[0].innerHTML = hours +chosen_suffix;
 	
-/*document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = tweets[Math.floor(Math.random()*tweets.length)].text;*/
+	
+if Math.random()<0.5{
+	document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = tweets[Math.floor(Math.random()*tweets.length)].text;
+	real = true;
+}
+else
+{
+	start();
+	real = false;
+}
 	
 function go(x){
   count = count + 1;
-  if (x == 0 && num<=0.5){
-    document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = "Correct";
+  if (x == 0 && real){
     correct = correct+1;
     document.getElementsByClassName('counter-block')[0].innerHTML = correct + "/" + count;
   }
   else
-  if (x==1 && num>0.5){
-    document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = "Correct";
+  if (x==1 && !real){
     correct = correct+1;
     document.getElementsByClassName('counter-block')[0].innerHTML = correct + "/" + count;
   }
@@ -133,6 +141,17 @@ function go(x){
     document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = "Not Correct";
     document.getElementsByClassName('counter-block')[0].innerHTML = correct + "/" + count;
   }
+	
+	if Math.random()<0.5{
+		document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = tweets[Math.floor(Math.random()*tweets.length)].text;
+		real = true;
+	}
+	else
+	{
+		start();
+		real = false;
+	}
+
 }
 
 </script>
