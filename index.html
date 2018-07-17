@@ -74,6 +74,14 @@
       function createTokens() {
         var terms = trump_speeches.split(" ");
         for (var i = 0; i < terms.length-2; i++) {
+		  if (tokens_new[terms[i]]!= undefined)
+			tokens_new[terms[i]].push(terms[i+1]);
+		  else
+		  {
+			tokens_new[terms[i]] = []; 
+			tokens_new[terms[i]].push(terms[i+1]);
+		  }
+		
 		  if (tokens_new[terms[i]+" "+terms[i+1]]!= undefined)
 			tokens_new[terms[i]+" "+terms[i+1]].push(terms[i+2]);
 		  else
@@ -99,8 +107,13 @@
       }
 	
       function findNextWord(currentWord,lastWord) {
-        var word = tokens_new[lastWord+" "+currentWord][Math.floor(Math.random() * tokens_new[currentWord].length)]; // choose a random next word
-        return word;
+	var word
+	if (tokens_new[lastWord+" "+currentWord] != undefined)
+        	word = tokens_new[lastWord+" "+currentWord][Math.floor(Math.random() * tokens_new[currentWord].length)]; // choose a random next word
+        else
+		word = tokens_new[currentWord][Math.floor(Math.random() * tokens_new[currentWord].length)]; // choose a random next word
+		
+	return word;
       }
       
       
@@ -120,9 +133,13 @@
 	createTokens()
         var currentWord = chooseStartingToken();
         var sentence = currentWord + " ";
+	var lastWord = "";
         while (sentence.length< 140) { 
 		/*currentWord = findNextWord(currentWord);*/
-		currentWord = findNextWord(currentWord);
+		var c = currentWord;
+		currentWord = findNextWord(currentWord,lastWord);
+		lastWord = c;
+		
 		if ((sentence.length + currentWord.length)<140 && (sentence.length<120 || (currentWord.slice(-1) != ",") && !(wrong_ending.indexOf(currentWord.toLowerCase()) > -1)))
 			sentence += currentWord + " ";
 		else
