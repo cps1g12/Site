@@ -90,8 +90,11 @@
         var currentWord = chooseStartingToken();
         var sentence = currentWord + " ";
         while (sentence.length< 140) { 
-			currentWord = findNextWord(currentWord);
+		currentWord = findNextWord(currentWord);
+		if ((sentence.length + currentWord.length<140)
 			sentence += currentWord + " ";
+		else
+		    break;
         }
         document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = sentence;
       }
