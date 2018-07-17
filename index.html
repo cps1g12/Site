@@ -148,7 +148,7 @@
 		currentWord = findNextWord(currentWord,lastWord);
 		lastWord = c;
 		
-		if ((sentence.length + currentWord.length)<140 && (sentence.length<120 || (currentWord.slice(-1) != ",") && !(wrong_ending.indexOf(currentWord.toLowerCase()) > -1)))
+		if ((sentence.length + currentWord.length)<140)
 			sentence += currentWord + " ";
 		else
 		    break;
