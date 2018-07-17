@@ -73,13 +73,13 @@
       
       function createTokens() {
         var terms = trump_speeches.split(" ");
-        for (var i = 0; i < terms.length-1; i++) {
-		  if (tokens_new[terms[i]]!= undefined)
-			tokens_new[terms[i]].push(terms[i+1]);
+        for (var i = 0; i < terms.length-2; i++) {
+		  if (tokens_new[terms[i]+" "+terms[i+1]]!= undefined)
+			tokens_new[terms[i]+" "+terms[i+1]].push(terms[i+2]);
 		  else
 		  {
-			tokens_new[terms[i]] = []; 
-			tokens_new[terms[i]].push(terms[i+1]);
+			tokens_new[terms[i]+" "+terms[i+1]] = []; 
+			tokens_new[terms[i]+" "+terms[i+1]].push(terms[i+2]);
 		  }
         }
       }
@@ -98,8 +98,8 @@
         return terms[Math.floor(Math.random()*terms.length)];
       }
 	
-      function findNextWord(currentWord) {
-        var word = tokens_new[currentWord][Math.floor(Math.random() * tokens_new[currentWord].length)]; // choose a random next word
+      function findNextWord(currentWord,lastWord) {
+        var word = tokens_new[lastWord+" "+currentWord][Math.floor(Math.random() * tokens_new[currentWord].length)]; // choose a random next word
         return word;
       }
       
