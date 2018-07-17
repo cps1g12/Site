@@ -154,7 +154,7 @@
 				break;
 		}
 		
-		if (Math.random() > 0.92 && !(wrong_ending.indexOf(currentWord.toLowerCase()) > -1)) break;
+		if (Math.random() > 0.92 && !(wrong_ending.indexOf(currentWord.toLowerCase()) > -1) && sentence.length>25) break;
         }
 	      
 	if (sentence.slice(-1) == " ")
@@ -225,7 +225,7 @@ function go(x){
     document.getElementsByClassName('counter-block')[0].innerHTML = correct + "/" + count;
   }
 	
-	if (Math.random()<0.5){
+	if (Math.random()<0.4){
 		document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = tweets[Math.floor(Math.random()*tweets.length)].text;
 		real = true;
 	}
