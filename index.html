@@ -64,14 +64,14 @@
       var tokens = [];
       var tokens_new = {};
       
-      function createTokens() {
+      /*function createTokens() {
         var terms = trump_speeches.split(" ");
         for (var i = 0; i < terms.length; i++) {
           tokens.push(terms[i]);
         }
-      }
+      }*/
       
-      function createTokensNew() {
+      function createTokens() {
         var terms = trump_speeches.split(" ");
         for (var i = 0; i < terms.length-1; i++) {
 		  if (tokens_new[terms[i]]!= undefined)
@@ -84,12 +84,12 @@
         }
       }
       
-      function chooseStartingToken() {
+      /*function chooseStartingToken() {
         var index = Math.floor(Math.random() * tokens.length);
         return tokens[index];
-      }
+      }*/
 	
-      function chooseStartingTokenNew() {
+      function chooseStartingToken() {
 	var first_words = "";
       for (var i = 0; i < tweets.length; i++) { 
 	  first_words += ' ' + tweets[i].text.split(" ")[0];
@@ -98,13 +98,13 @@
         return terms[Math.floor(Math.random()*terms.length)];
       }
 	
-      function findNextWordNew(currentWord) {
+      function findNextWord(currentWord) {
         var word = tokens_new[currentWord][Math.floor(Math.random() * tokens_new[currentWord].length)]; // choose a random next word
         return word;
       }
       
       
-      function findNextWord(currentWord) {
+      /*function findNextWord(currentWord) {
         var nextWords = [];
         for (var w = 0; w < tokens.length-1; w++) {
           if (tokens[w] == currentWord) {
@@ -113,17 +113,16 @@
         }
         var word = nextWords[Math.floor(Math.random() * nextWords.length)]; // choose a random next word
         return word;
-      }
+      }*/
       
       
       function start() {
-	createTokensNew()
-        /*createTokens();*/
-        var currentWord = chooseStartingTokenNew();
+	createTokens()
+        var currentWord = chooseStartingToken();
         var sentence = currentWord + " ";
         while (sentence.length< 140) { 
 		/*currentWord = findNextWord(currentWord);*/
-		currentWord = findNextWordNew(currentWord);
+		currentWord = findNextWord(currentWord);
 		if ((sentence.length + currentWord.length)<140 && (sentence.length<120 || (currentWord.slice(-1) != ",") && !(wrong_ending.indexOf(currentWord.toLowerCase()) > -1)))
 			sentence += currentWord + " ";
 		else
