@@ -111,6 +111,9 @@
 	if (sentence.split('"').length-1 % 2 != 0)
 		sentence = sentence.replace('"', '');
 	      
+	if (sentence.charAt(0).match(/[a-z]/i))
+		sentence = sentence.charAt(0).toUpperCase() + sentence.slice(1);
+	      
         document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = sentence;
       }
       
