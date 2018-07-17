@@ -108,6 +108,9 @@
 		if (Math.random() > 0.92) break;
         }
 	      
+	if (sentence.slice(-1).match(/[a-z]/i))
+		sentence += ".";
+	      
 	if (sentence.split('"').length-1 % 2 != 0)
 		sentence = sentence.replace('"', '');
 	      
