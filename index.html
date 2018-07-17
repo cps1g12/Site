@@ -108,7 +108,7 @@
 		if (Math.random() > 0.92) break;
         }
 	      
-	if !(sentence.slice(-1) == "." || sentence.slice(-1) == "!" || sentence.slice(-1) == "?")
+	if (!(sentence.slice(-1) == "." || sentence.slice(-1) == "!" || sentence.slice(-1) == "?"))
 		sentence += ".";
 	      
 	if (sentence.split('"').length-1 % 2 != 0)
