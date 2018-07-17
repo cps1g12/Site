@@ -74,21 +74,26 @@
       function createTokens() {
         var terms = trump_speeches.split(" ");
         for (var i = 0; i < terms.length-2; i++) {
-		  if (tokens_new[terms[i]]!= undefined)
-			tokens_new[terms[i]].push(terms[i+1]);
-		  else
-		  {
-			tokens_new[terms[i]] = []; 
-			tokens_new[terms[i]].push(terms[i+1]);
-		  }
-		
-		  if (tokens_new[terms[i]+" "+terms[i+1]]!= undefined)
-			tokens_new[terms[i]+" "+terms[i+1]].push(terms[i+2]);
-		  else
-		  {
-			tokens_new[terms[i]+" "+terms[i+1]] = []; 
-			tokens_new[terms[i]+" "+terms[i+1]].push(terms[i+2]);
-		  }
+		 if (terms[i].search("http")==-1){
+			 
+			  if (tokens_new[terms[i]]!= undefined && terms[i+1].search("http")==-1)
+				tokens_new[terms[i]].push(terms[i+1]);
+			  else
+			  {
+				tokens_new[terms[i]] = []; 
+				tokens_new[terms[i]].push(terms[i+1]);
+			  }
+			 
+			  if (terms[i+2].search("http")==-1){
+			  if (tokens_new[terms[i]+" "+terms[i+1]]!= undefined)
+				tokens_new[terms[i]+" "+terms[i+1]].push(terms[i+2]);
+			  else
+			  {
+				tokens_new[terms[i]+" "+terms[i+1]] = []; 
+				tokens_new[terms[i]+" "+terms[i+1]].push(terms[i+2]);
+			  }
+			  }
+		 }
         }
       }
       
