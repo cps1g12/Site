@@ -180,6 +180,8 @@
 	if (sentence.charAt(0).match(/[a-z]/i))
 		sentence = sentence.charAt(0).toUpperCase() + sentence.slice(1);
 	      
+	if (sentence.length<130 && Math.random()<0.075) sentence += "#MAGA";
+	      
         document.getElementsByClassName('timeline-Tweet-text')[0].innerHTML = sentence;
       }
       
