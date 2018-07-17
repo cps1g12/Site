@@ -109,7 +109,7 @@
       function findNextWord(currentWord,lastWord) {
 	var word
 	if (tokens_new[lastWord+" "+currentWord] != undefined)
-        	word = tokens_new[lastWord+" "+currentWord][Math.floor(Math.random() * tokens_new[currentWord].length)]; // choose a random next word
+        	word = tokens_new[lastWord+" "+currentWord][Math.floor(Math.random() * tokens_new[lastWord+" "+currentWord].length)]; // choose a random next word
         else
 		word = tokens_new[currentWord][Math.floor(Math.random() * tokens_new[currentWord].length)]; // choose a random next word
 		
