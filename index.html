@@ -94,8 +94,8 @@
       for (var i = 0; i < tweets.length; i++) { 
 	  first_words += ' ' + tweets[i].text.split(" ")[0];
 	}
-        var terms = trump_speeches.split(" ");
-        return terms[MAth.floor(Math.random()*terms.length())];
+        var terms = first_words.split(" ");
+        return terms[Math.floor(Math.random()*terms.length())];
       }
 	
       function findNextWordNew(currentWord) {
