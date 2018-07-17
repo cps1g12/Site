@@ -115,7 +115,7 @@
         var sentence = currentWord + " ";
         while (sentence.length< 140) { 
 		/*currentWord = findNextWord(currentWord);*/
-		currentWord = findNextWord(currentWord);
+		currentWord = findNextWordNew(currentWord);
 		if ((sentence.length + currentWord.length)<140 && (sentence.length<120 || (currentWord.slice(-1) != ",") && !(wrong_ending.indexOf(currentWord.toLowerCase()) > -1)))
 			sentence += currentWord + " ";
 		else
