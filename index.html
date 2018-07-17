@@ -110,6 +110,14 @@
 	      
 	if (sentence.slice(-1) == " ")
 		sentence = sentence.substring(0, sentence.length - 1);
+	    
+	var words = sentence.split(" ");
+	if (wrong_ending.indexOf(words[words.length-1].toLowerCase())){
+		sentence = "";
+		for (var i =0; i<words.length-1; i++)
+			sentence += words[i];
+	}
+		
 	      
 	if (!(sentence.slice(-1) == "." || sentence.slice(-1) == "!" || sentence.slice(-1) == "?"))
 		sentence += ".";
