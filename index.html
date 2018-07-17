@@ -56,8 +56,7 @@
       var wrong_ending = ["then", "like", "and", "so", "but","or","while","when","because","the","to"];
 	
       var trump_speeches = '';
-      var i;
-      for (i = 0; i < tweets.length; i++) { 
+      for (var i = 0; i < tweets.length; i++) { 
 	  trump_speeches += ' ' + tweets[i].text;
 	}
 	trump_speeches += extra_text;
@@ -91,6 +90,10 @@
       }
 	
       function chooseStartingTokenNew() {
+	var first_words = "";
+      for (var i = 0; i < tweets.length; i++) { 
+	  first_words += ' ' + tweets[i].text.split(" ")[0];
+	}
         var terms = trump_speeches.split(" ");
         return terms[MAth.floor(Math.random()*terms.length())];
       }
