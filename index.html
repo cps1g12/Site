@@ -89,6 +89,11 @@
         var index = Math.floor(Math.random() * tokens.length);
         return tokens[index];
       }
+	
+      function findNextWordNew(currentWord) {
+        var word = tokens_new[currentword][Math.floor(Math.random() * tokens_new[currentword].length)]; // choose a random next word
+        return word;
+      }
       
       
       function findNextWord(currentWord) {
@@ -105,10 +110,11 @@
       
       function start() {
 	createTokensNew()
-        createTokens();
+        /*createTokens();*/
         var currentWord = chooseStartingToken();
         var sentence = currentWord + " ";
         while (sentence.length< 140) { 
+		/*currentWord = findNextWord(currentWord);*/
 		currentWord = findNextWord(currentWord);
 		if ((sentence.length + currentWord.length)<140 && (sentence.length<120 || (currentWord.slice(-1) != ",") && !(wrong_ending.indexOf(currentWord.toLowerCase()) > -1)))
 			sentence += currentWord + " ";
