@@ -95,12 +95,12 @@
         var sentence = currentWord + " ";
         while (sentence.length< 140) { 
 		currentWord = findNextWord(currentWord);
-		if ((sentence.length + currentWord.length)<140)
+		if ((sentence.length + currentWord.length)<140 && (sentence.length<120 || currentWord.slice(-1) != ","))
 			sentence += currentWord + " ";
 		else
 		    break;
 		
-		if (sentence.length>50+Math.floor(Math.random()*40)){
+		if (sentence.length>40+Math.floor(Math.random()*40)){
 			if (sentence.slice(-1) == "." || sentence.slice(-1) == "!" || currentWord.charAt(0) == "#")
 				break;
 		}
